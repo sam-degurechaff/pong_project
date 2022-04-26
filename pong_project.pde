@@ -5,11 +5,14 @@ final int GAME=1;
 final int PAUSE=2;
 final int GAMEOVER=3;
 final int OPTIONS=4;
-
+float vx, vy;
 float leftx, lefty, leftd, rightx, righty, rightd;
 float ballx, bally, balld;
-
+float S2;
+float dist;
 boolean wkey, skey, upkey, downkey;
+
+float r, R;
 
 void setup() {
   size(800, 600);
@@ -27,6 +30,13 @@ void setup() {
   balld=100;
 
   wkey=skey=upkey=downkey=false;
+
+  r=leftd/2;
+  R=balld/2;
+
+  S2=8;
+  vx=random(-S2, S2);
+  vy=random(-S2, S2);
 }
 
 void draw() {
