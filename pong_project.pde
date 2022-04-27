@@ -11,7 +11,7 @@ float ballx, bally, balld;
 float S2;
 float dist;
 boolean wkey, skey, upkey, downkey;
-
+int leftscore,rightscore,timer;
 float r, R;
 
 void setup() {
@@ -33,7 +33,8 @@ void setup() {
 
   r=leftd/2;
   R=balld/2;
-
+rightscore=leftscore=0;
+timer=100;
   S2=8;
   vx=random(-S2, S2);
   vy=random(-S2, S2);
