@@ -51,6 +51,12 @@ void game() {
     bally=height/2;
     timer=100;
   }
+  if (leftscore==40) {
+    mode=GAMEOVER;
+  }
+  if (rightscore==1) {
+    mode=GAMEOVER02;
+  }
 }
 void gameClicks() {
 }

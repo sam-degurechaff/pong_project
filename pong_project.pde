@@ -5,14 +5,16 @@ final int GAME=1;
 final int PAUSE=2;
 final int GAMEOVER=3;
 final int OPTIONS=4;
+final int GAMEOVER02=5;
 float vx, vy;
 float leftx, lefty, leftd, rightx, righty, rightd;
 float ballx, bally, balld;
 float S2;
 float dist;
 boolean wkey, skey, upkey, downkey;
-int leftscore,rightscore,timer;
+int leftscore, rightscore, timer;
 float r, R;
+PImage img;
 
 void setup() {
   size(800, 600);
@@ -33,8 +35,8 @@ void setup() {
 
   r=leftd/2;
   R=balld/2;
-rightscore=leftscore=0;
-timer=100;
+  rightscore=leftscore=0;
+  timer=100;
   S2=8;
   vx=random(-S2, S2);
   vy=random(-S2, S2);
@@ -49,6 +51,8 @@ void draw() {
     pause();
   } else if (mode==GAMEOVER) {
     gameover();
+  } else if (mode==GAMEOVER02) {
+    gameover02();
   } else {
     println("Mode error:"+mode);
   }
