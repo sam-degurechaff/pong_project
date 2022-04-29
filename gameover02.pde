@@ -1,11 +1,19 @@
 void gameover02() {  
-    img = loadImage("blue poster.jpg");
-  image(img, 0, 0);
-  rect(300, 400, 200, 100);
+
+
+  image(img, -50, -200, 1000, 1500);
+  rect(300, 400, 200, 100); 
   textAlign(CENTER, CENTER);
+  textSize(40);
+  fill(0);
+  text("restart",width/2,440);
+  
   stroke(0);
   strokeWeight(2);
-  fill(255);
+  textSize(80);
+  fill(0);
+  rect(180, 78, 440, 80);
+  fill(225);
   text("blue victory", width/2, 100);
 }
 

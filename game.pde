@@ -1,4 +1,5 @@
 void game() {
+  background(0);
   textSize(50);
   fill(#FF0000);
   text(leftscore, width/4, 100);
@@ -6,11 +7,13 @@ void game() {
   text(rightscore, 3*width/4, 100);
   text(timer, 3*width/4, 550); 
   timer=timer-1;
-
+  stroke(225);
+  strokeWeight (6);
   fill(#FF0000);
   circle(leftx, lefty, leftd);
   fill(#0063FF);
   circle(rightx, righty, rightd);
+  rect(10, 50, 50, 50);
 
   if (wkey==true)lefty=lefty-5;
   if (skey==true)lefty=lefty+5;
@@ -54,9 +57,24 @@ void game() {
   if (leftscore==40) {
     mode=GAMEOVER;
   }
-  if (rightscore==1) {
+  if (rightscore==40) {
     mode=GAMEOVER02;
+  }
+  if (righty>500) {
+    righty=500;
+  }
+  if (righty<100) {
+    righty=100;
+  }
+   if (lefty>500) {
+    lefty=500;
+  }
+  if (lefty<100) {
+    lefty=100;
   }
 }
 void gameClicks() {
+  if (mouseX>10&&mouseY>50&&mouseX<60&&mouseY<100) {
+    mode=PAUSE;
+  }
 }

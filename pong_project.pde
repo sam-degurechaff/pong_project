@@ -18,7 +18,7 @@ PImage img;
 
 void setup() {
   size(800, 600);
-  mode=GAME;
+  mode=INTRO;
   leftx=0;
   lefty=height/2;
   leftd=200;
@@ -40,6 +40,8 @@ void setup() {
   S2=8;
   vx=random(-S2, S2);
   vy=random(-S2, S2);
+  
+  img = loadImage("blue poster.jpg");
 }
 
 void draw() {
