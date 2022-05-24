@@ -17,8 +17,19 @@ void game() {
 
   if (wkey==true)lefty=lefty-5;
   if (skey==true)lefty=lefty+5;
-  if (upkey==true)righty=righty-5;
-  if (downkey==true)righty=righty+5;
+
+  if (AI==false) {
+    if (upkey==true)righty=righty-5;
+    if (downkey==true)righty=righty+5;
+  } else {
+    if (ballx<400||bally>righty) {
+      righty=righty+4.5;
+    }
+    if (ballx<400||bally<righty) {
+      righty=righty-4.5;
+    }
+  }
+
   fill(225);
   circle(ballx, bally, balld);
   if (timer<0) {
@@ -31,16 +42,22 @@ void game() {
   if (bally<100/2||bally>height-100/2) {
     vy=vy*-1;
   }
+  if (bally<50) {
+    bally=51;
+  }
+  if (bally>550) {
+    bally=549;
+  }
   println(dist, r, R);
   dist = dist(leftx, lefty, ballx, bally);
   if (dist<r+R) {
-    vx=(ballx-leftx)/10;
-    vy=(bally-lefty)/10;
+    vx=(ballx-leftx)/12;
+    vy=(bally-lefty)/12;
   }
   dist = dist(rightx, righty, ballx, bally);
   if (dist<r+R) {
-    vx=(ballx-rightx)/10;
-    vy=(bally-righty)/10;
+    vx=(ballx-rightx)/12;
+    vy=(bally-righty)/12;
   }
   if (ballx<0) {
     rightscore++;
@@ -66,7 +83,7 @@ void game() {
   if (righty<100) {
     righty=100;
   }
-   if (lefty>500) {
+  if (lefty>500) {
     lefty=500;
   }
   if (lefty<100) {

@@ -15,6 +15,7 @@ boolean wkey, skey, upkey, downkey;
 int leftscore, rightscore, timer;
 float r, R;
 PImage img;
+boolean AI;
 
 void setup() {
   size(800, 600);
